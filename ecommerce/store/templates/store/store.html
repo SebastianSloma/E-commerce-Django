@@ -1,47 +1,18 @@
-{% extends 'store/main.html' %}
-{% load static %}
-{% block content %}
-
-<h3>Store</h3>
+{% extends 'store/main.html' %} {% load static %} {% block content %}
 
 <div class="row">
-		<div class="col shadoww">
-			<img class="thumbnail" src="{% static 'images/vans.png' %}">
-			<div class="box product">
-				<h6><strong>VANS CLASSIC</strong></h6>
-				<hr>
-				<button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
-				<a class="btn btn-outline-success" href="#">View</a>
-				<h4 style="display: inline-block"><strong>$20</strong></h4>
-
-			</div>
-		</div>
-
-		<div class="col shadoww">
-			<img class="thumbnail" src="{% static 'images/vans1.png' %}">
-			<div class="box product">
-				<h6><strong>VANS CHECKERBOARD CLASSIC</strong></h6>
-				<hr>
-				
-				<button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
-				<a class="btn btn-outline-success" href="#">View</a>
-				<h4 style="display: inline-block"><strong>$20</strong></h4>
-				
-			</div>
-		</div>
-
-		<div class="col shadoww">
-			<img class="thumbnail" src="{% static 'images/vans2.png' %}">
-			<div class="box product">
-				<h6><strong>VANS FLAME OLD SKOOL</strong></h6>
-				<hr>
-
-				<button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
-				<a class="btn btn-outline-success" href="#">View</a>
-				<h4 style="display: inline-block"><strong>$20</strong></h4>
-
-			</div>
+	{% for product in products %}
+	<div class="col-3 m-4 shadoww">
+		<img class="thumbnail" src="{{product.imageURL}}" />
+		<div class="box product">
+			<h6><strong>{{product.name}}</strong></h6>
+			<hr />
+			<button class="btn btn-outline-secondary add-btn">Add to Cart</button>
+			<a class="btn btn-outline-success" href="#">View</a>
+			<h4 style="display: inline-block"><strong>€{{product.price|floatformat:2}}</strong></h4>
 		</div>
 	</div>
+	{% endfor %}
+</div>
 
 {% endblock content %}
