@@ -40,7 +40,7 @@
 				return cookieValue;
 			}
 			const csrftoken = getToken('csrftoken');
-			console.log('CSRFTOKEN:', csrftoken);
+			
 
 			function getCookie(name) {
 				var cookieArr = document.cookie.split(';');
@@ -58,7 +58,7 @@
 
 			if (cart == undefined) {
 				cart = {};
-				console.log('Cart Created!', cart);
+				console.log('Cart Was Created!', cart);
 				document.cookie = 'cart=' + JSON.stringify(cart) + ';domain=;path=/';
 			}
 			console.log('Cart:', cart);
