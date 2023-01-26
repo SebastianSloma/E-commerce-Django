@@ -19,7 +19,7 @@
 			href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css"
 		/>
 
-		<script type="text/javascript">
+		<script>
 			var user = '{{request.user}}';
 
 			function getToken(name) {
@@ -51,8 +51,6 @@
 						return decodeURIComponent(cookiePair[1]);
 					}
 				}
-
-				
 				return null;
 			}
 			var cart = JSON.parse(getCookie('cart'));
