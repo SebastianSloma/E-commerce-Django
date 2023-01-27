@@ -8,7 +8,6 @@ https://docs.djangoproject.com/en/4.1/howto/deployment/wsgi/
 """
 
 import os
-heroku config:set DISABLE_COLLECTSTATIC=1
 
 from django.core.wsgi import get_wsgi_application
 
