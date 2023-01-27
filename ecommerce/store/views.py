@@ -43,6 +43,8 @@ def checkout(request):
 	return render(request, 'store/checkout.html', context)
 
 
+
+
 def updateItem(request):
     data = json.loads(request.body)
     productId = data['productId']
